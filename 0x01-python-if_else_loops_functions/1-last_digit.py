@@ -12,4 +12,4 @@ elif last < 6 and last != 0:
     stmt = "and is less than 6 and not 0"
 else:
     stmt = "and is 0"
-print(f"Last digit of {number} is {last} and {stmt}")
+print(f"Last digit of {number} is {last} {stmt}")
