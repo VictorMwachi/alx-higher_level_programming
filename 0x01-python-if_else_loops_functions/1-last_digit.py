@@ -7,7 +7,7 @@ if number < 0:
 else:
     last = number % 10
 if last > 5:
-    stmt = "is greater than 5"
+    stmt = "and is greater than 5"
 elif last < 6 and last != 0:
     stmt = "and is less than 6 and not 0"
 else:
