@@ -5,6 +5,6 @@ def safe_print_list(my_list=[], x=0):
             if i < x:
                 print("{}".format(my_list[i]), end="")
             else:
-                print()          
+                print()
     except IndexError:
         print()
