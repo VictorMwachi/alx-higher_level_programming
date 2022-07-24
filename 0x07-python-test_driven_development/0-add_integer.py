@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
     """adds integers"""
-    if a is float:
+    
+    if type(a) is float:
         a = int(a)
-    if b is float:
+    if type(b) is float:
         b = int(b)
-    if a is not int:
+    if type(a)!= int:
         raise TypeError("a must be an integer")
-    if b is not int:
+    if type(b) != int:
         raise TypeError("b must be an integer")
     return a + b
