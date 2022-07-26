@@ -8,5 +8,5 @@ def print_square(size):
     raise TypeError("size must be an integer")
   if size < 0:
     raise ValueError("size must be >= 0")
-  for r in range(0,size):
+  for r in range(0, size):
     print('#' * size)
