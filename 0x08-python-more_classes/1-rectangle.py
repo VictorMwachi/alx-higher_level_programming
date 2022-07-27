@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Rerctangle module"""
+"""Rectangle module"""
 
 
 class Rectangle:
-    """class rectangle
-    Initialize Rectangle object with height and width"""
+    """Initialize Rectangle object with height and width"""
 
     def __init__(self, width=0, height=0):
         self.__width = width
