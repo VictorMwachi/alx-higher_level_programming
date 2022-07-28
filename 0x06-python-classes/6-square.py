@@ -1,28 +1,36 @@
 #!/usr/bin/python3
-"""module square"""
+"""Square class to represent a square"""
 
 
-class Square:
-    '''Inisialize Class Square
-    '''
+class Square():
+    """square class with it's size and proper validation"""
 
     def __init__(self, size=0, position=(0, 0)):
+        """"Initialize data"""
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """"get size"""
         return self.__size
 
-    @size.setter
-    def size(self, size):
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
+    @property
+    def position(self):
+        """"get position"""
+        return self.__position
 
-        @position.setter
+    @size.setter
+    def size(self, value):
+        """"set size"""
+        if (type(value) is not int):
+            raise TypeError("size must be an integer")
+        elif (value < 0):
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+    @position.setter
     def position(self, value):
         """"set position"""
         if (type(value) is not tuple):
@@ -35,9 +43,13 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
-            
+
+    def area(self):
+        """"returns the area of the square"""
+        return self.size ** 2
+
     def my_print(self):
-        """print the square"""
+        """prints the square"""
         if self.size == 0:
             print()
         else:
