@@ -3,11 +3,7 @@
 """
 
 
-class BaseGeometry:
-    """class basegeometry"""
-    def area(self):
-        """returns an exception"""
-        raise Exception("area() is not implemented")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
     def integer_validator(self, name, value):
         """
