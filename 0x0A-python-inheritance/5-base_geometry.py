@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""
-emptyy class
+"""contins basegeometry empty class
 """
 
 
 class BaseGeometry:
+    """empty class"""
     pass
