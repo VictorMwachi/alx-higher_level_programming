@@ -19,6 +19,6 @@ class Square(Rectangle):
         """returns area of a square"""
         return self.__size**2
 
-    def __init__(self):
+    def __str__(self):
         """string defination of calss square"""
         return f"[Square] {size}/{size}"
