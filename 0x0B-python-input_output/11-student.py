@@ -25,6 +25,6 @@ class Student:
 
     def reload_from_json(self, json):
         """replaces all attributes of the Student instance"""
-        save = var(self)
+        save = vars(self)
         for key, value in json.items():
             save[key] = value
