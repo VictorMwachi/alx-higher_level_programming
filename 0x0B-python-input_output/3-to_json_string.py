@@ -6,6 +6,7 @@ an object(string)
 """
 
 
+import json
 def to_json_string(my_obj):
     """reurns string rep of an object"""
     return json.dumps(my_obj)
