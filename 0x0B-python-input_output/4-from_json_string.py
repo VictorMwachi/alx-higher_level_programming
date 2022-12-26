@@ -12,4 +12,4 @@ import json
 def from_json_string(my_str):
     """retirns python data structure
     represented by a json string"""
-    return json.load(my_str)
+    return json.loads(my_str)
