@@ -17,8 +17,8 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-            dict_new={}
+            dict_new = {}
             for att in attrs:
-                if hasattr(self,att):
+                if hasattr(self, att):
                     dict_new[att] = getattr(self, att)
             return dict_new
