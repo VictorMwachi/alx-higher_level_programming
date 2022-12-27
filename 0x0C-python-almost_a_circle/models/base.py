@@ -7,7 +7,7 @@ module has class base
 class Base:
     """base class"""
     __nb_objects = 0
-    
+
     def __init__(self, id=None):
         """initialises class base"""
         if id is not None:
