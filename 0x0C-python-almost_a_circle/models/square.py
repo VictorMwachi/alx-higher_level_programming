@@ -16,10 +16,30 @@ class Square(Rectangle):
     def __str__(self):
         """custom string defination of square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
     @property
     def size(self):
         return self.width
+
     @size.setter
     def size(self, value):
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """update class square"""
+        list_attr = ['id', 'size', 'x', 'y']
+        if args is not None:
+            for i in range(len(args)):
+                if list_attr[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, list_attr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
