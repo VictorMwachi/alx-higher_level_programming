@@ -4,7 +4,7 @@ module contains class Rectangle that inherits from Base
 """
 
 
-Base = __import('base').Base
+Base = __import__('base').Base
 
 
 class Rectangle(Base):
