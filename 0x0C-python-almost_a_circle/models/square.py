@@ -15,4 +15,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """custom string defination of square"""
-        return f"[Square] ({id}) {x}/{y} - {size}"
+        return f"[Square] ({id}) {self.__x}/{self.__y} - {self.__size}"
