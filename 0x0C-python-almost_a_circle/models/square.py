@@ -29,7 +29,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """update class square"""
         list_attr = ['id', 'size', 'x', 'y']
-        if args is not None:
+        if args is not None and len(args) != 0:
             for i in range(len(args)):
                 if list_attr[i] == 'size':
                     setattr(self, 'width', args[i])
