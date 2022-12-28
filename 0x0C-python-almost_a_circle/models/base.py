@@ -40,3 +40,11 @@ class Base:
         list_str = cls.to_json_string(list_dic)
         with open(filename, 'w') as f:
             f.write(list_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns alist of json strings"""
+        if json_string is None or len(json_string) = 0:
+            return []
+        else:
+            return json.loads(json_string)
