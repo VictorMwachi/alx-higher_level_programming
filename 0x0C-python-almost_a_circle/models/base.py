@@ -44,7 +44,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns alist of json strings"""
-        if json_string is None or len(json_string) = 0:
+        if json_string is None:
             return []
         else:
             return json.loads(json_string)
