@@ -4,7 +4,8 @@ module has class base
 """
 
 
-import json, os
+import json
+import os
 
 
 class Base:
