@@ -56,6 +56,7 @@ class Base:
             new = cls(5, 5)
         else:
             new = cls(10)
+        new.update(**dictionary)
         return new
 
     @classmethod
