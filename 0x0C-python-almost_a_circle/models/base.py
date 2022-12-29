@@ -6,6 +6,7 @@ module has class base
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -74,3 +75,48 @@ class Base:
         for i in range(len(list_dic)):
             list_ins.append(cls.create(**list_dic[i]))
         return list_ins
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serialises to csv"""
+        filename = f"{cls.__name__}.csv"
+        if cls.__name__ == 'Rectangle':
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        if cls.__name__ == 'Square':
+            list_keys = ['id', 'size', 'x', 'y']
+        list_s = []
+        list_s.append(list_keys)
+        if list_objs is None:
+            pass
+        else:
+            for obj in list_objs:
+                temp_dic=obj.to_dictionary()
+                list_values = []
+                for key in list_keys:
+                    list_values.append(temp_dic[key])
+                list_s.append(list_values)
+        with open(filename,'w') as f:
+            writer = csv.writer(f)
+            writer.writerows(list_s)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """desirealises from csv"""
+        filename = f"{cls.__name__}.csv"
+        if os.path.exists(filename) is False:
+            return []
+        if cls.__name__ == 'Rectangle':
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        if cls.__name__ == 'Square':
+            list_keys = ['id', 'size', 'x', 'y']
+        with open(filename,'r') as f:
+            reader = csv.reader(f)
+            csv_list = list(reader)
+        list_obj = []
+        for i, line_list in enumerate(csv_list):
+            if i != 0:
+                dic_obj = {}
+                for j in range(len(list_keys)):
+                    dic_obj[list_keys[j]] = line_list[j]
+                list_obj.append(dic_obj)
+        return list_obj
