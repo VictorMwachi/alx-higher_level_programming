@@ -90,7 +90,7 @@ class Base:
             pass
         else:
             for obj in list_objs:
-                temp_dic=obj.to_dictionary()
+                temp_dic = obj.to_dictionary()
                 list_values = []
                 for key in list_keys:
                     list_values.append(temp_dic[key])
@@ -117,7 +117,7 @@ class Base:
             if i != 0:
                 dic_obj = {}
                 for j in range(len(list_keys)):
-                    dic_obj[list_keys[j]] = line_list[j]
+                    dic_obj[list_keys[j]] = int(line_list[j])
                 list_obj.append(dic_obj)
         list_ins = []
         for i in range(len(list_obj)):
