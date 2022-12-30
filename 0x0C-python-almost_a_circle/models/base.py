@@ -119,4 +119,7 @@ class Base:
                 for j in range(len(list_keys)):
                     dic_obj[list_keys[j]] = line_list[j]
                 list_obj.append(dic_obj)
-        return list_obj
+        list_ins = []
+        for i in range(len(list_obj)):
+            list_ins.append(cls.create(**list_obj[i]))
+        return list_ins
