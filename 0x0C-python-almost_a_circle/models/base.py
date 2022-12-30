@@ -95,7 +95,7 @@ class Base:
                 for key in list_keys:
                     list_values.append(temp_dic[key])
                 list_s.append(list_values)
-        with open(filename,'w') as f:
+        with open(filename, 'w') as f:
             writer = csv.writer(f)
             writer.writerows(list_s)
 
@@ -109,7 +109,7 @@ class Base:
             list_keys = ['id', 'width', 'height', 'x', 'y']
         if cls.__name__ == 'Square':
             list_keys = ['id', 'size', 'x', 'y']
-        with open(filename,'r') as f:
+        with open(filename, 'r') as f:
             reader = csv.reader(f)
             csv_list = list(reader)
         list_obj = []
