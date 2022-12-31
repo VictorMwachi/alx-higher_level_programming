@@ -7,6 +7,7 @@ module has class base
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -123,3 +124,49 @@ class Base:
         for i in range(len(list_obj)):
             list_ins.append(cls.create(**list_obj[i]))
         return list_ins
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ that opens a window and draws all the Rectangles and Squares"""
+        turtle.title("Draws all the Rectangles and Squares")
+        turtle.pensize(2)
+        turtle.speed(1)
+        def draw_rect(width, height, x, y):
+                """draws rectangle only"""
+                turtle.color('blue')
+                turtle.forward(x)
+                turtle.pendown()
+                turtle.begin_fill()
+                for l in range(2):
+                    turtle.forward(width)
+                    turtle.left(90)
+                    turtle.forward(height)
+                    turtle.left(90)
+                turtle.end_fill()
+                turtle.penup()
+                turtle.forward(width)#move to right end
+
+        def draw_square(size, x, y):
+                """draws square only"""
+                turtle.pensize(2)
+                turtle.speed(1)
+                turtle.color('green')
+                turtle.forward(x)
+                turtle.pendown()
+                turtle.begin_fill()
+                for l in range(4):
+                    turtle.forward(size)
+                    turtle.left(90)
+                turtle.end_fill()
+                turtle.penup()
+                turtle.forward(size)#move to right end
+        for lis in list_rectangles:
+            height = lis.height
+            width = lis.width
+            draw_rect(width,height,lis.x, lis.y)
+        turtle.reset()
+        for lis in list_squares:
+            size = lis.size
+            draw_square(size, lis.x, lis.y)
+        turtle.hideturtle()
+        turtle.done()
