@@ -11,7 +11,8 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def test_init(self):
+    def test_id(self):
+        Base._Base__nb_objects = 0
         b = Base()
         b1 = Base()
         b2 = Base()
