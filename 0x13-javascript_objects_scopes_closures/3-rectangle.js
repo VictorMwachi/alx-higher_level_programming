@@ -7,6 +7,7 @@ module.exports = class Rectangle {
     }
   }
 print(){
-for( i=0;i<this,height;i++){
-console.log('X'.repeat(this.width))}}
+while(this.height > 0){
+console.log('X'.repeat(this.width))
+this.height--}}
 };
