@@ -6,8 +6,11 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
-print(){
-while(this.height > 0){
-console.log('X'.repeat(this.width))
-this.height--}}
+
+  print () {
+    while (this.height > 0) {
+      console.log('X'.repeat(this.width));
+      this.height--;
+    }
+  }
 };
