@@ -6,9 +6,9 @@ class Square extends square {
     if (c == null) {
       c = 'X';
     }
-    let iter = size;
+    let iter = this.width;
         while(iter>0){
-            console.log('X'.repeat(size));
+            console.log('X'.repeat(this.width));
             iter--;
   }
 }
