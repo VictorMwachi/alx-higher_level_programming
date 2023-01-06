@@ -7,10 +7,10 @@ class Square extends square {
       c = 'X';
     }
     let iter = this.width;
-        while(iter>0){
-            console.log(c.repeat(this.width));
-            iter--;
+    while (iter > 0) {
+      console.log(c.repeat(this.width));
+      iter--;
+    }
   }
-}
 }
 module.exports = Square;
