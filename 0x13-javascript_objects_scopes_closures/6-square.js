@@ -8,7 +8,7 @@ class Square extends square {
     }
     let iter = this.width;
         while(iter>0){
-            console.log('X'.repeat(this.width));
+            console.log(c.repeat(this.width));
             iter--;
   }
 }
