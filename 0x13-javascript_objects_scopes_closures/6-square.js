@@ -12,4 +12,5 @@ class Square extends square {
             iter--;
   }
 }
+}
 module.exports = Square;
