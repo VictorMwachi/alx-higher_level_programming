@@ -19,7 +19,7 @@ if __name__ == '__main__':
         state_name = sys.argv[4]
         cursor.execute(
             'SELECT * FROM states WHERE CAST(name AS BINARY) LIKE ' +
-            'CAST("{}" AS BINARY) ORDER BY id ASC;'.formart(state_name)
+            'CAST("{}" AS BINARY) ORDER BY id ASC;'.format(state_name)
         )
         results = cursor.fetchall()
         for result in results:
