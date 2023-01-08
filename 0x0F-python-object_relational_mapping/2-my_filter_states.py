@@ -18,8 +18,8 @@ if __name__ == '__main__':
         cursor = db_connection.cursor()
         state_name = sys.argv[4]
         cursor.execute(
-            f'SELECT * FROM states WHERE CAST(name AS BINARY) LIKE ' +
-            'CAST("{state_name}" AS BINARY) ORDER BY id ASC;'
+            f"'SELECT * FROM states WHERE CAST(name AS BINARY) LIKE ' +
+            'CAST("{state_name}" AS BINARY) ORDER BY id ASC;'"
         )
         results = cursor.fetchall()
         for result in results:
