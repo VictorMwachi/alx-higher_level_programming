@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Prints the first State object from the database hbtn_0e_6_usa.
+""" Prints the first State object from the database hbtn_0e_6_usa."""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -16,4 +16,4 @@ if __name__ == "__main__":
     if state is None:
         print("Nothing")
     else:
-        print("{}: {}".format(state.id, state.name))        
+        print("{}: {}".format(state.id, state.name))
