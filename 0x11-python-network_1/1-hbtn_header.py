@@ -4,5 +4,11 @@
  displays the value of the X-Request-Id variable found
  in the header of the response.
  """
+
+
 import sys
 import urllib.requests
+if __name__ =='__main__':
+    url = sys.argv[1]
+    request = url.requests.Request(url)
+    print(request)
