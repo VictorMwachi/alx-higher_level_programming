@@ -7,8 +7,8 @@
 
 
 import sys
-import urllib.requests
+import urllib.request
 if __name__ =='__main__':
     url = sys.argv[1]
-    request = url.requests.Request(url)
+    request = urllib.request.Request(url)
     print(request)
