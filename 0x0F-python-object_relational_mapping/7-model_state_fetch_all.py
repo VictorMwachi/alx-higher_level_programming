@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Lists all State objects from the database hbtn_0e_6_usa.
+"""Lists all State objects from the database hbtn_0e_6_usa."""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -13,4 +13,4 @@ if __name__ == "__main__":
     session = Session()
 
     for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))        
+        print("{}: {}".format(state.id, state.name))
