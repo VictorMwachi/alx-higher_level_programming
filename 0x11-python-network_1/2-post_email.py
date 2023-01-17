@@ -15,4 +15,4 @@ if __name__ == '__main__':
     data = urllib.parse.urlencode(email).encode('ascii')
     request = urllib.request.Request(url,data)
     with urllib.request.urlopen(request) as response:
-        response.read()
+        print(response.read())
