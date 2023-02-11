@@ -9,7 +9,7 @@ request(process.argv[2], (error, response, body) => {
     return;
   }
 
-  fs.appendFile(process.argv[3], body, 'utf8', (err) => {
+  fs.writeFile(process.argv[3], body, 'utf8', (err) => {
     if (err) {
       console.error(err);
     }
