@@ -1,23 +1,21 @@
 #!/usr/bin/node
-// fs and  request are used to get the content of a webpage and the stores it in a file
 const request = require('request');
 
-const url = 'https://jsonplaceholder.typicode.com/todos';
-request(url, (error, response, body) => {
+// The first argument is the API URL
+const baseURL = process.argv[2];
+request(baseURL, (error, response, body) => {
+  const aggregate = {};
   if (error) {
-    console.error(error);
-    return;
+    console.log(error);
   }
-  const dict = {};
-  const datas = JSON.parse(body);
-  datas.forEach(data => {
-    if (data.completed) {
-      if (!dict[data.userId]) {
-        dict[data.userId] = 0;
+  const json = JSON.parse(body);
+  json.forEach(element => {
+    if (element.completed) {
+      if (!aggregate[element.userId]) {
+        aggregate[element.userId] = 0;
       }
-      dict[data.userId]++;
+      aggregate[element.userId]++;
     }
   });
-
-  console.log(dict);
+  console.log(aggregate);
 });
